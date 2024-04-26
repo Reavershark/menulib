@@ -49,7 +49,9 @@ class Menu:
         self.height = height
 
     def run(self, setup: Callable[[], None], draw: Callable[[], None], on_touch: Callable[[int, int], None]):
-        pygame.init()
+        pygame.font.init()
+        pygame.display.init()
+        pygame.mouse.set_visible(0)
         self.screen = pygame.display.set_mode((self.width, self.height))
         self.clock = pygame.time.Clock()
         self.screen.fill(BLACK)
